@@ -15,8 +15,7 @@ n = length(VECTOR_DE_DATOS);
 x0 = [0.01 500 3]';
 t = (1:n)';
 tic
-% [X, iter] = min_cuad('residuales',  1.e-06, 10000, x0);
-[X, iter] = Gauss_Newton('residuales', x0);
+[X, iter] = GaussNewton('residuales',  1.e-06, 100, x0);
 toc
 
 disp('La solución final para el problema de iPads es:')

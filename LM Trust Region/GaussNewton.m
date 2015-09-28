@@ -1,4 +1,4 @@
-function [ x, iter ] = min_cuad(fname, tol, maxiter, x)
+function [ x, iter ] = GaussNewton(fname, tol, maxiter, x)
 % Resuelve el problema de mínimos cuadrados con funciones no lineales
 % utilizando el método de Levenberg-Marquardt. 
 % Min f(x) = (1/2) * ( r(x)' * r(x) ) con r(x) función de Rn --> Rm
