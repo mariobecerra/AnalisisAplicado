@@ -55,10 +55,9 @@ function [ x, iter ] = GaussNewton(fname, tol, maxiter, x)
         while(flag == 0)
             p_temp = Doblez(B, grad, delta);
 
-            r_x_p_temp = feval(fname, x + p_temp);
-            rx_temp = feval(fname,x);
-            c = (rx_temp' * rx_temp) + c1 * grad' * p_temp;
-            if( r_x_p_temp' * r_x_p_temp  <= c ) %Condición de Armijo (descenso suficiente)
+            r_x_p = feval(fname, x + p_temp);
+            c = (rx' * rx) + c1 * grad' * p_temp;
+            if( r_x_p' * r_x_p  <= c ) %Condición de Armijo (descenso suficiente)
                % Si se cumple la condición de Armijo, toma p_temp como dirección
                p = p_temp;
                flag = 1;
