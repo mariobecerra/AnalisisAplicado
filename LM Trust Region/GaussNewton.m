@@ -1,6 +1,6 @@
 function [ x, iter ] = GaussNewton(fname, tol, maxiter, x)
 % Resuelve el problema de mínimos cuadrados con funciones no lineales
-% utilizando el método de Levenberg-Marquardt. 
+% utilizando el método de Levenberg-Marquardt mediante región de confianza. 
 % Min f(x) = (1/2) * ( r(x)' * r(x) ) con r(x) función de Rn --> Rm
 %
 %In:
@@ -22,9 +22,7 @@ function [ x, iter ] = GaussNewton(fname, tol, maxiter, x)
 % Mario Becerra 124362
 % José Carlos Castro 127049
 % José Manuel Incera 125360
-% Rodrigo Morales Mendoza 124341
-%
-% 
+% Rodrigo Morales Mendoza 124341 
 
     delta_lo = 1.e-05; delta_hi = 1; c1=1.e-04;
 
